@@ -19,11 +19,18 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(transform.position.y < 3.52f && transform.position.y > -3.65f)
+            if(transform.position.y < 3.40f)
             {
              rb.velocity = Vector2.up * velocity;
              thisAnimation.Play();
             }
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag=="Obstacle")
+        {
+
         }
     }
 }
